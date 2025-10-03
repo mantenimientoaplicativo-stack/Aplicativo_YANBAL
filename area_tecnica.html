@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Area tecnica</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 20px 20px 20px;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .imagen-con-boton {
+      position: relative;
+      margin-top: 20px;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 20px;
+      padding: 6px;
+      background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
+      background-size: 600% 600%;
+      animation: gradienteAnim 8s ease infinite;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      color: black;
+    }
+
+    .imagen-con-boton img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+
+    @keyframes gradienteAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .titulo-zona {
+      position: absolute;
+      top:48%; /* Subido para no chocar con botón */
+      left: 18%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: black;
+      text-shadow: 1px 1px 5px black;
+      z-index: 10;
+    }
+
+    .boton-transparente {
+      position: absolute;
+      padding: 8px 18px;
+      font-size: 1.1em;
+      background-color: transparent;
+      color: #444;
+      border: 2px solid rgba(68, 68, 68, 0.7);
+      border-radius: 7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      text-shadow: 0 0 2px rgba(68, 68, 68, 0.4);
+      z-index: 5;
+    }
+
+    .boton-transparente:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 24px 1px rgba(180, 180, 180, 1);
+      text-shadow: 0 0 5px #bbb;
+    }
+
+    .boton-transparente:active {
+      box-shadow: 0 0 8px 2px rgba(150, 150, 150, 0.7);
+      background-color: rgba(150, 150, 150, 0.15);
+      border-color: #bbb;
+      color: #bbb;
+      text-shadow: 0 0 4px #aaa;
+    }
+
+    .boton-gris {
+      color: #333;
+      border-color: #444;
+    }
+
+    /* Posiciones relativas usando porcentaje */
+    .tanque_pulmon { top: 2%; left: 0.01%; }
+    .compresores { top: 4%; left: 36.5%; }
+    .aquamat { top: 15%; left: 20%; }
+    .calderas { top: 26%; left: 20%; }
+    .chiller { top: 15%; left: 62.5%; }
+
+    .extracciones { top: 40%; left: 36%; }
+    .suministros  { top: 68%; left: 36%; }
+    .bomba  { top: 52%; left: 36%; }
+
+
+    .button-container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-link {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      color: #7fffd4;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .button-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      background-color: rgba(15, 15, 15, 1);
+      color: #aaffff;
+    }
+
+    .button-description {
+      color: #ccc;
+      font-size: 0.9em;
+      font-weight: normal;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .imagen-con-boton {
+        width: 98%; /* Expandir imagen un poco más en móviles */
+      }
+
+      .boton-transparente {
+        font-size: 1.3em;
+        padding: 10px 20px;
+      }
+
+      .titulo-zona {
+        font-size: 1.6em;
+        top: 48%; /* Asegurarse que no se empalme en móviles */
+        left: 18%;
+      }
+
+      .button-link {
+        font-size: 1.2em;
+        padding: 16px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="imagen-con-boton">
+    <p class="titulo-zona"> Area <br>
+       Tecnica </p>
+    <img src="plano-area-tecnica.png" alt="Plano Zona Negra" />
+
+    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br> 
+      pulmon</button></a>
+    <a href="compresores.html"><button class="boton-transparente boton-gris compresores">Compresores</button></a>
+    <a href="https://drive.google.com/file/d/1TGF3MEK-kaBBN0CxcHGst367B_eCeT5B/view?usp=sharingaquamat.html"><button class="boton-transparente boton-gris aquamat">Aquamat</button></a>
+    <a href="calderas.html"><button class="boton-transparente boton-gris calderas">Calderas</button></a>
+    <a href="chiller.html"><button class="boton-transparente boton-gris chiller">Chiller<br>YORK</button></a>
+
+
+    <a href="extracciones.html"><button class="boton-transparente boton-gris extracciones">Extracciones VE</button></a>
+    <a href="suministros.html"><button class="boton-transparente boton-gris suministros">Suministros UV</button></a>
+    <a href="https://drive.google.com/file/d/1QfpyYO6_h5tWSZcfb5Gg5zfFxcFMGwcg/view?usp=sharing"><button class="boton-transparente boton-gris bomba">Bomba<br>GRUNDFOS</button></a>
+  </div>
+
+  <div class="button-container">
+    <a href="index.html" class="button-link" aria-label="Regresar al Menú Principal">
+      Regresar al Menú Principal
+      <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </a>
+  </div>
+
+</body>
+</html>
