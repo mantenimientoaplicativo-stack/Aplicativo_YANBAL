@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Línea 2zG</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
+      color: #7fffd4;
+    }
+
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/13JMYcfKEblmGmNoi4swOIB-SqBore3Oi/view?usp=sharing', '_blank')">
+      <div class="card-title">1) Banda abast frascos CH1</div>
+      <p class="card-description">Cinta encargada de llevar frascos vacíos hacia la envasadora.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/11xpXdQTEvUD2qvgWjR31_SrFuqJhevVY/view?usp=sharing', '_blank')">
+      <div class="card-title">2) Transportadora de nidos CAPMATIC</div>
+      <p class="card-description">Transportador diseñado para organizar y mover nidos hacia el área de llenado.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1VWobQUFM5xq2KFVh4iGFhcGukgnFKQj9/view?usp=sharing', '_blank')">
+      <div class="card-title">3) Tolva dosificadora de bombas</div>
+      <p class="card-description">Alimentador automático de bombas dosificadoras hacia la línea de ensamble.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1Ns3T8t34si_R8KT_tdm0I_AyyAoydVnK/view?usp=sharing', '_blank')">
+      <div class="card-title">4) Tolva dosificadora de collarines</div>
+      <p class="card-description">Sistema que alimenta automáticamente collarines para el proceso de empaque.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1rfXkn9zquQHxB3amyaOx8LNRD_bCXrjn/view?usp=sharing', '_blank')">
+      <div class="card-title">5) Transportador de canjilones CAP</div>
+      <p class="card-description">Equipo que mueve piezas verticalmente mediante recipientes tipo canjilón.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='envasadora_cap.html'">
+      <div class="card-title">6) Envasadora PATRIOT CAPMATIC</div>
+      <p class="card-description">Máquina automática para el llenado preciso de líquidos en frascos.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1ydmETQ0hCC7V4P9hubsJR4UQFyj_voi_/view?usp=sharing', '_blank')">
+      <div class="card-title">7) Tapadora ALPHA</div>
+      <p class="card-description">Sistema automático para cerrar frascos con tapas a presión o rosca.</p>
+    </div>
+
+
+
+    <div class="card" onclick="window.location.href='index.html'">
+      <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla principal y explorar otras zonas.</p>
+    </div>
+
+  </div>
+</body>
+</html>
