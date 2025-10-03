@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Línea 5zn</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    @keyframes fondoOscuroAnimado {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+      justify-content: center;
+      align-items: stretch; /* para que la altura sea igual */
+    }
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 45%;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      min-height: 220px; /* altura fija igual para todos */
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+    }
+    /* Cambiar color del texto al pasar el mouse */
+    .card:hover .card-title,
+    .card:hover .card-description {
+      color: #7fffd4;
+      transition: color 0.3s ease;
+    }
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+      flex-grow: 1;
+      transition: color 0.3s ease;
+    }
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 80%;
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1allT_IvBuAB9SqIigvEN1gpfL1-S5zGt/view?usp=sharing', '_blank')">
+      <div class="card-title">1) Banda BM5</div>
+      <p class="card-description">Banda transportadora BM5 para transporte continuo y seguro.</p>
+    </div>
+    
+    <div class="card" onclick="window.location.href='encelos20.html'">
+      <div class="card-title">2) Encelofanadora S20 SOLLAS</div>
+      <p class="card-description">Máquina para el envuelto en celofán de estuches de manera automatizada.</p>
+    </div>
+    
+    <div class="card" onclick="window.open('index.html', '_blank')">
+      <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </div>
+  </div>
+</body>
+</html>
