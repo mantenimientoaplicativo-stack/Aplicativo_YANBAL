@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Busqueda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* ➕ Centrado vertical opcional */
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .titulo {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    .search-container {
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    select.search-select {
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.1em;
+      background-color: #1f1f1f;
+      color: #7fffd4;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+      cursor: pointer;
+      min-width: 140px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.1em;
+      background-color: #1f1f1f;
+      color: #7fffd4;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+    }
+
+    .card {
+      background-color: rgba(30, 30, 30, 0.9);
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 5px rgba(127, 255, 212, 0.1);
+      border-left: 5px solid #7fffd4;
+      text-align: left;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.6em;
+      color: #aaffff;
+      text-align: left;
+    }
+
+    .equipo-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #aaffff;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #7fffd4;
+      padding-bottom: 8px;
+    }
+
+    #equipoList {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .equipo-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      color: #ccc;
+      font-size: 1.1em;
+      padding: 10px 0;
+      border-bottom: 1.5px solid rgba(127, 255, 212, 0.3);
+    }
+
+    .equipo-item:first-child {
+      border-top: 1.5px solid rgba(127, 255, 212, 0.3);
+    }
+
+    .equipo-header > div:nth-child(1),
+    .equipo-header > div:nth-child(2),
+    .equipo-item > div:nth-child(1),
+    .equipo-item > div:nth-child(2) {
+      text-align: center;
+    }
+
+    .equipo-header > div:nth-child(3),
+    .equipo-item > div:nth-child(3) {
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .button-link {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      color: #7fffd4;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .button-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      background-color: rgba(15, 15, 15, 1);
+      color: #aaffff;
+    }
+
+    .button-description {
+      color: #ccc;
+      font-size: 0.9em;
+      font-weight: normal;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .titulo {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .search-container {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      select.search-select,
+      .search-input {
+        width: 100%;
+        min-width: unset;
+        font-size: 1.1em;
+        padding: 12px;
+      }
+
+      .button-link {
+        font-size: 1.2em;
+        padding: 16px;
+        max-width: 100%;
+      }
+
+      .card {
+        padding: 16px;
+        margin: 0 10px;
+      }
+
+      .equipo-header,
+      .equipo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        border-bottom: 1.5px solid rgba(127, 255, 212, 0.3);
+        padding: 10px 0;
+      }
+
+      .equipo-item:first-child {
+        border-top: 1.5px solid rgba(127, 255, 212, 0.3);
+      }
+
+      .equipo-header > div,
+      .equipo-item > div {
+        text-align: left !important;
+        padding-left: 0 !important;
+        font-size: 1em;
+      }
+
+      .equipo-header > div {
+        font-weight: bold;
+        color: #aaffff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo">Busqueda</div>
+
+  <div class="search-container">
+    <select id="searchCategory" class="search-select" onchange="buscarEquipo()">
+      <option value="0">Denominación</option>
+      <option value="1">Ubicación</option>
+      <option value="2">Tablero</option>
+    </select>
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar..." onkeyup="buscarEquipo()" />
+  </div>
+
+  <div class="card">
+    <h2>Listado</h2>
+    <br><br>
+    <div class="equipo-header">
+      <div>Denominación</div>
+      <div>Ubicación</div>
+      <div>Tablero</div>
+    </div>
+    <div id="equipoList">
+      <div class="equipo-item"> 
+        <div>AC-301</div> 
+        <div>Área técnica</div> 
+        <div>Área técnica</div> 
+      </div> 
+      <div class="equipo-item">
+        <div>VE-301</div>
+        <div>Área técnica piso 2</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-1301</div> 
+        <div>Área técnica piso 2</div> 
+        <div>Área técnica</div> 
+      </div>
+      <div class="equipo-item">
+        <div>VE-1301</div>
+        <div>Área técnica piso 2</div>
+        <div>Área técnica</div> 
+      </div> 
+      <div class="equipo-item"> 
+        <div>UV-501</div> 
+        <div>Área técnica</div>
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>UV-502</div>
+        <div>Área técnica</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>VE-501</div> 
+        <div>Área técnica</div> 
+        <div>Área técnica</div> 
+      </div>
+      <div class="equipo-item">
+        <div>VE-502</div>
+        <div>Área técnica</div>
+        <div>Área técnica</div> 
+      </div> 
+      <div class="equipo-item">
+        <div>UV-901</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>UV-902</div> 
+        <div>Cubierta</div> 
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>VE-901</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item">
+        <div>VE-902</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>UV-1001</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div> 
+      </div>
+      <div class="equipo-item"> 
+        <div>VE-1001</div> 
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item">
+        <div>UV-1101</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>UV-1102</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>VE-1101</div> 
+        <div>Cubierta</div>
+        <div>Área técnica</div> 
+      </div>
+      <div class="equipo-item">
+        <div>VE-1102</div>
+        <div>Cubierta</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item"> 
+        <div>BAC-01</div>
+        <div>#</div> 
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item">
+        <div>BAC-02</div> 
+        <div>#</div> 
+        <div>Área técnica</div> 
+      </div>
+      <div class="equipo-item">
+        <div>BAG-01</div>
+        <div>#</div>
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>BAG-02</div>
+        <div>#</div>
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>EA-01</div>
+        <div>#</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item">
+        <div>BAG-03</div>
+        <div>#</div> 
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item">
+        <div>BAG-04</div> 
+        <div>#</div> 
+        <div>Área técnica</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>EA-02</div>
+        <div>#</div>
+        <div>Área técnica</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-315</div> 
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div> 
+      </div>
+      <div class="equipo-item">
+        <div>UV-316</div>
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div> 
+      </div> 
+      <div class="equipo-item">
+        <div>VE-315</div>
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div>
+      </div> 
+      <div class="equipo-item"> 
+        <div>VE-316</div> 
+        <div>Cubierta</div> 
+        <div>Cuarto electrico piso 3</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-1401</div> 
+        <div>Cubierta</div> 
+        <div>Cuarto electrico piso 3</div>
+      </div>
+      <div class="equipo-item">
+        <div>VE-1401</div>
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div> 
+      </div> 
+      <div class="equipo-item"> 
+        <div>UV-701</div>
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div> 
+      </div>
+      <div class="equipo-item">
+        <div>VE-701</div>
+        <div>Cubierta</div>
+        <div>Cuarto electrico piso 3</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-401</div>
+        <div>Área técnica</div>
+        <div>Calidad</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-402</div>
+        <div>Área técnica</div>
+        <div>Calidad</div>
+      </div> 
+      <div class="equipo-item">
+        <div>VE-401</div> 
+        <div>Área técnica</div>
+        <div>Calidad</div> 
+      </div>
+      <div class="equipo-item">
+        <div>VE-402</div>
+        <div>Área técnica</div>
+        <div>Calidad</div>
+      </div> 
+      <div class="equipo-item">
+        <div>UV-1201</div>
+        <div>Cubierta</div>
+        <div>Cubierta</div>
+      </div> 
+      <div class="equipo-item">
+        <div>VE-1201</div>
+        <div>Cubierta</div>
+        <div>Cubierta</div> 
+      </div> 
+      <div class="equipo-item">
+        <div>UV-801</div>
+        <div>Cubierta</div> 
+        <div>Cubierta</div>
+      </div> <div class="equipo-item">
+        <div>VE-801</div> 
+        <div>Cubierta</div>
+        <div>Cubierta</div>
+      </div> 
+    </div> 
+  </div>
+
+  <a href="index.html" class="button-link">
+    Regresar al Menú Principal
+    <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+  </a>
+
+  <script>
+    function normalizeText(text) {
+      return text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function buscarEquipo() {
+      const input = normalizeText(document.getElementById("searchInput").value);
+      const categoryIndex = parseInt(document.getElementById("searchCategory").value);
+      const items = document.querySelectorAll(".equipo-item");
+
+      items.forEach(item => {
+        const textoColumna = normalizeText(item.children[categoryIndex].textContent);
+        if (textoColumna.includes(input)) {
+          item.style.display = "grid";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
