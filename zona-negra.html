@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zona Negra</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 20px 20px 20px;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .imagen-con-boton {
+      position: relative;
+      margin-top: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      padding: 6px;
+      background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
+      background-size: 600% 600%;
+      animation: gradienteAnim 8s ease infinite;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      color: black;
+    }
+
+    .imagen-con-boton img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+
+    @keyframes gradienteAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .titulo-zona {
+      position: absolute;
+      top: 1.3%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: black;
+      text-shadow: 1px 1px 5px black;
+      z-index: 10;
+    }
+
+    .boton-transparente {
+      position: absolute;
+      padding: 8px 18px;
+      font-size: 1.1em;
+      background-color: transparent;
+      color: #444;
+      border: 2px solid rgba(68, 68, 68, 0.7);
+      border-radius: 7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      text-shadow: 0 0 2px rgba(68, 68, 68, 0.4);
+      z-index: 5;
+      text-decoration: none;
+    }
+
+    .boton-transparente:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 24px 1px rgba(180, 180, 180, 1);
+      text-shadow: 0 0 5px #bbb;
+    }
+
+    .boton-transparente:active {
+      box-shadow: 0 0 8px 2px rgba(150, 150, 150, 0.7);
+      background-color: rgba(150, 150, 150, 0.15);
+      border-color: #bbb;
+      color: #bbb;
+      text-shadow: 0 0 4px #aaa;
+    }
+
+    .boton-gris {
+      color: #333;
+      border-color: #444;
+    }
+
+    /* Posiciones relativas usando porcentaje */
+    .linea1 { top: 73%; left: 64%; }
+    .linea2 { top: 55%; left: 64%; }
+    .linea3 { top: 39%; left: 64%; }
+    .linea4 { top: 25%; left: 64%; }
+    .linea5 { top: 13%; left: 64%; }
+
+    .videojet     { top: 24%; left: 4%; }
+    .estibadores  { top: 37%; left: 4%; }
+    .banda        { top: 50%; left: 4%; }
+    .hercules     { top: 65%; left: 4%; }
+    .soplador     { top: 80%; left: 4%; }
+
+    .button-container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .button-link {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      color: #7fffd4;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .button-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      background-color: rgba(15, 15, 15, 1);
+      color: #aaffff;
+    }
+
+    .button-description {
+      color: #ccc;
+      font-size: 0.9em;
+      font-weight: normal;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .imagen-con-boton {
+        width: 98%;
+      }
+
+      .boton-transparente {
+        font-size: 1.3em;
+        padding: 10px 20px;
+      }
+
+      .titulo-zona {
+        font-size: 1.6em;
+        top: 1.5%;
+      }
+
+      .button-link {
+        font-size: 1.2em;
+        padding: 16px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="imagen-con-boton">
+    <p class="titulo-zona">Zona Negra</p>
+    <img src="captura.png" alt="Plano Zona Negra" />
+
+    <a href="Linea1zn.html"><button class="boton-transparente boton-gris linea1">Línea 1</button></a>
+    <a href="Linea2zn.html"><button class="boton-transparente boton-gris linea2">Línea 2</button></a>
+    <a href="Linea3zn.html"><button class="boton-transparente boton-gris linea3">Línea 3</button></a>
+    <a href="Linea4zn.html"><button class="boton-transparente boton-gris linea4">Línea 4</button></a>
+    <a href="Linea5zn.html"><button class="boton-transparente boton-gris linea5">Línea 5</button></a>
+
+    <a href="banda_espiral.html">
+      <button class="boton-transparente boton-gris banda">Banda espiral</button>
+    </a>
+    <a href="#"><button class="boton-transparente boton-gris hercules">Hércules</button></a>
+    <a href="#"><button class="boton-transparente boton-gris estibadores">Estibadores</button></a>
+    <a href="impresora_videojet.html">
+      <button class="boton-transparente boton-gris videojet">Video Jet</button>
+    </a>
+    <a href="https://drive.google.com/file/d/1gnFlzohuEn4N6NDRRvtE5uGtBNRdDrWb/view?usp=sharing" class="boton-transparente boton-gris soplador" target="_blank" rel="noopener noreferrer">
+      Soplador<br>VideoJet
+    </a>
+  </div>
+
+  <!-- Botón de regreso colocado fuera del contenedor de imagen -->
+  <div class="button-container">
+    <a href="index.html" class="button-link" aria-label="Regresar al Menú Principal">
+      Regresar al Menú Principal
+      <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </a>
+  </div>
+
+</body>
+</html>
