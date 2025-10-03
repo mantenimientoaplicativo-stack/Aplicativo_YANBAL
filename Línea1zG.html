@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea 1zG</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
+    }
+
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-description {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1VoVMlVMlmtTjjtImUDUBcuJxklXK38iI/view?usp=sharing', '_blank')">
+      <div class="card-title">1) Transportadora de nidos PKB</div>
+      <p class="card-description">Equipo que organiza y transporta los frascos desde la estación inicial.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/13JMYcfKEblmGmNoi4swOIB-SqBore3Oi/view?usp=sharing', '_blank')">
+      <div class="card-title">2) Banda abast frascos CH1</div>
+      <p class="card-description">Cinta transportadora encargada de abastecer frascos hacia la línea de llenado.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='envasadora_automatica_pkb.html'">
+      <div class="card-title">3) Envasadora automática PKB</div>
+      <p class="card-description">Máquina que dosifica el producto en frascos con alta precisión y velocidad.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1t8jacQ-GTVW2J-gChHII6vi-zFL5lwUX/view?usp=sharing', '_blank')">
+      <div class="card-title">4) Tapadora PKB</div>
+      <p class="card-description">Equipo encargado de colocar tapas de forma automática con torque controlado.</p>
+    </div>
+    
+    <div class="card" onclick="window.location.href='etiquetadora_label.html'">
+      <div class="card-title">5) Etiquetadora Label Star</div>
+      <p class="card-description">Máquina especializada en aplicar etiquetas envolventes con gran eficiencia.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1FWiD_i34AfT1ZBY5-XroQG-Kwto-Pwsv/view?usp=sharing', '_blank')">
+      <div class="card-title">6) Transportador Depucker #2</div>
+      <p class="card-description">Sistema de transporte para el movimiento fluido de frascos después del desempacado.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1ZJErLPbfN4SBAAKNlysjGyGeM-MSApqn/view?usp=sharing', '_blank')">
+      <div class="card-title">7) Etiquetadora universal</div>
+      <p class="card-description">Equipo para colocar etiquetas automáticamente sobre los envases. Alta precisión y velocidad.</p>
+    </div>
+
+
+    <div class="card" onclick="window.location.href='index.html'">
+      <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla principal y explorar otras líneas.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+
