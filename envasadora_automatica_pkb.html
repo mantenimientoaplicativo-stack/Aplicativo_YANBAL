@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Opciones Envasadora Automatica PKB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .titulo {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+      max-width: 600px;
+      align-items: center;
+    }
+
+    .button-link {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      color: #7fffd4;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .button-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      background-color: rgba(15, 15, 15, 1);
+      color: #aaffff;
+    }
+
+    .button-description {
+      color: #ccc;
+      font-size: 0.9em;
+      font-weight: normal;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .titulo {
+        font-size: 2em;
+      }
+
+      .button-link {
+        font-size: 1.2em;
+        padding: 16px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo">Envasadora automatica PKB</div>
+
+  <div class="button-group">
+    <a href="https://drive.google.com/file/d/1QXrgh2a6vhWEy7V6wByEtNVf1KPlYjhN/view?usp=drive_link" class="button-link" target="_blank" rel="noopener noreferrer">
+      Taxonomía
+      <p class="button-description">Haz clic para ver los repuestos.</p>
+    </a>
+
+    <a href="https://drive.google.com/file/d/18FdsSJZlwHth6pRTV_sd6TZ7rdSefsVo/view?usp=sharing" class="button-link" target="_blank" rel="noopener noreferrer">
+      Manual
+      <p class="button-description">Consulta el manual de operación.</p>
+    </a>
+
+    <a href="index.html" class="button-link">
+      Regresar al Menú Principal
+      <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </a>
+  </div>
+
+</body>
+</html>
