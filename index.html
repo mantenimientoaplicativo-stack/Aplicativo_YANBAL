@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú principal</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden; /* ✅ Permitimos scroll vertical */
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
+      z-index: 1;
+    }
+
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+    }
+
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100% !important;
+      }
+
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-description {
+        font-size: 14px;
+      }
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal {
+      background: #121212;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffc3;
+      width: 320px;
+      max-width: 90%;
+      color: #7fffd4;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #00ffc3;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .modal label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid #00ffc3;
+      background-color: #1a1a1a;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .modal input[type="text"]:focus,
+    .modal input[type="password"]:focus {
+      border-color: #7fffd4;
+    }
+
+    .modal button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      background-color: #00ffc3;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal button:hover {
+      background-color: #7fffd4;
+    }
+
+    .modal .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      font-size: 22px;
+      color: #00ffc3;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .modal .error-message {
+      color: #ff6b6b;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .modal .error-message.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <div class="card" onclick="window.location.href='zona-negra.html'">
+      <div class="card-title">Zona negra</div>
+      <p class="card-description">Accede a la línea de producción de la zona negra.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='zona-gris.html'">
+      <div class="card-title">Zona gris</div>
+      <p class="card-description">Accede a la línea de producción de la zona gris.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='Area_tecnica.html'">
+      <div class="card-title">Área Técnica</div>
+      <p class="card-description">Accede al área técnica.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='fabricacion.html'">
+      <div class="card-title">Fabricación</div>
+      <p class="card-description">Accede al área de fabricación.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='Busqueda.html'">
+      <div class="card-title">Búsqueda</div>
+      <p class="card-description">Busca equipos por su denominación, código y ubicación.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='planos.html'">
+      <div class="card-title">Planos</div>
+      <p class="card-description">Accede a los planos del edificio planta fragancias.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='https://forms.office.com/Pages/ResponsePage.aspx?id=Y7DJjFzXPUOA0JEsfAAuCx3Bfq2G6jJEs0qzaQroH3VUOFRYWlVHTEFFTFdGRDM5SVRJM1NEMlkwVS4u'">
+      <div class="card-title">Montar aviso</div>
+      <p class="card-description">Formulario para notificar una incidencia o requerimiento.</p>
+    </div>
+
+    <div class="card" onclick="abrirModal()">
+      <div class="card-title">Claves</div>
+      <p class="card-description">Accede con credenciales para ver claves de configuración de las máquinas.</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <span class="close-btn" id="closeBtn" title="Cerrar">&times;</span>
+      <h2 id="modalTitle">Acceso con credenciales</h2>
+      <div class="error-message" id="errorMsg">Usuario o contraseña incorrectos.</div>
+      <form id="loginForm">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" autocomplete="username" required />
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const closeBtn = document.getElementById('closeBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const loginForm = document.getElementById('loginForm');
+
+    function abrirModal() {
+      errorMsg.classList.remove('active');
+      loginForm.reset();
+      modal.classList.add('active');
+      document.getElementById('usuario').focus();
+    }
+
+    function cerrarModal() {
+      modal.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', cerrarModal);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape" && modal.classList.contains('active')) {
+        cerrarModal();
+      }
+    });
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const usuario = loginForm.usuario.value.trim();
+      const contraseña = loginForm.password.value;
+
+      const usuarioValido = "YANBAL";
+      const contraseñaValida = "Mtto2025*";
+
+      if (usuario === usuarioValido && contraseña === contraseñaValida) {
+        cerrarModal();
+        window.location.href = "claves.html";
+      } else {
+        errorMsg.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
