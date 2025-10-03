@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Línea 3zn</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    @keyframes fondoOscuroAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      color: #7fffd4;
+    }
+
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1PCeIIGb72duiNwdy5R793u2mr6wCloPf/view?usp=sharing', '_blank')">
+      <div class="card-title">1) Armadora de cajas Bivans</div>
+      <p class="card-description">Equipo automático para formar cajas de cartón listas para empacar.</p>
+    </div>
+
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1allT_IvBuAB9SqIigvEN1gpfL1-S5zGt/view?usp=sharing', '_blank')">
+      <div class="card-title">2) Banda transportadora BM5</div>
+      <p class="card-description">Cinta transportadora para abastecimiento en línea BM5.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='impresora_macsa.html'">
+      <div class="card-title">3) Impresora MACSA</div>
+      <p class="card-description">Equipo de impresión Laser de alta presición.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='encelosx60.html'">
+      <div class="card-title">4) Encelofanadora SX60 SOLLAS</div>
+      <p class="card-description">Máquina envolvedora para estuches con acabado de celofán.</p>
+    </div>
+    
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1GmJwTexGGyANgTj-gcTC4u8Dc2NjDju9/view?usp=sharing', '_blank')">
+      <div class="card-title">5) Banda transportadora BM6</div>
+      <p class="card-description">Cinta transportadora que conecta procesos de producción continua.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='index.html'">
+      <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </div>
+  </div>
+</body>
+</html>
