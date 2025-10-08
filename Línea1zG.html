@@ -1,133 +1,133 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Línea 1zG</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
-  <style>
-    * {
-      box-sizing: border-box;
+<!DOCTYPE html> <!-- Declara que el documento usa HTML5 -->
+<html lang="es"> <!-- Define el idioma principal del documento como español -->
+<head> <!-- Contenedor de metadatos del documento -->
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo en dispositivos móviles -->
+  <title>Línea 1zG</title> <!-- Título que aparece en la pestaña del navegador -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" /> <!-- Define el ícono (favicon) del sitio -->
+  <style> <!-- Sección para definir estilos CSS -->
+
+    * { /* Selector universal que aplica a todos los elementos */
+      box-sizing: border-box; /* Incluye padding y border dentro del tamaño total del elemento */
     }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
-      background-size: 300% 300%;
-      animation: fondoOscuroAnimado 20s ease infinite;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+    body { /* Estilos aplicados al cuerpo del documento */
+      margin: 0; /* Elimina el margen por defecto del navegador */
+      font-family: 'Segoe UI', sans-serif; /* Define la tipografía del texto */
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000); /* Crea un fondo con degradado diagonal */
+      background-size: 300% 300%; /* Amplía el fondo para permitir animación */
+      animation: fondoOscuroAnimado 20s ease infinite; /* Aplica una animación de fondo que se repite infinitamente */
+      color: white; /* Color del texto en blanco */
+      display: flex; /* Usa modelo de caja flexible */
+      justify-content: center; /* Centra los elementos horizontalmente */
+      align-items: center; /* Centra los elementos verticalmente */
+      min-height: 100vh; /* Hace que el cuerpo ocupe al menos toda la altura de la ventana */
+      padding: 20px; /* Añade espacio interior alrededor del contenido */
     }
 
-    @keyframes fondoOscuroAnimado {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes fondoOscuroAnimado { /* Define la animación para el fondo */
+      0% { background-position: 0% 50%; } /* Inicio: posición del fondo al 0% */
+      50% { background-position: 100% 50%; } /* Mitad: mueve el fondo al 100% */
+      100% { background-position: 0% 50%; } /* Fin: regresa a la posición inicial */
     }
 
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
-      justify-content: space-between;
+    .button-group { /* Contenedor principal de las tarjetas */
+      display: flex; /* Usa flexbox para organizar las tarjetas */
+      flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
+      gap: 20px; /* Espacio entre las tarjetas */
+      width: 100%; /* Ocupa todo el ancho disponible */
+      max-width: 1000px; /* Ancho máximo del contenedor */
+      justify-content: space-between; /* Distribuye las tarjetas con espacio entre ellas */
     }
 
-    .card {
-      background-color: rgba(15, 15, 15, 0.85);
-      border-radius: 12px;
-      padding: 20px;
-      width: 48%;
-      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    .card { /* Estilos para cada tarjeta */
+      background-color: rgba(15, 15, 15, 0.85); /* Fondo semitransparente oscuro */
+      border-radius: 12px; /* Bordes redondeados */
+      padding: 20px; /* Espaciado interno */
+      width: 48%; /* Ocupa casi la mitad del contenedor (dos tarjetas por fila) */
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2); /* Sombra suave en tono aguamarina */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza el efecto de movimiento y sombra al hacer hover */
+      cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
+    .card:hover { /* Estilos cuando el usuario pasa el ratón sobre una tarjeta */
+      transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6); /* Aumenta la intensidad de la sombra */
     }
 
-    .card-title {
-      font-size: 22px;
-      color: #7fffd4;
-      margin-bottom: 10px;
+    .card-title { /* Estilo para los títulos de las tarjetas */
+      font-size: 22px; /* Tamaño de fuente más grande */
+      color: #7fffd4; /* Color aguamarina */
+      margin-bottom: 10px; /* Espacio debajo del título */
     }
 
-    .card-description {
-      font-size: 16px;
-      color: #ccc;
-      margin: 0;
+    .card-description { /* Estilo para las descripciones de las tarjetas */
+      font-size: 16px; /* Tamaño de fuente estándar */
+      color: #ccc; /* Color gris claro */
+      margin: 0; /* Elimina márgenes por defecto */
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 600px) { /* Reglas para pantallas pequeñas (modo responsive) */
       .button-group {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Cambia las tarjetas a disposición vertical */
+        align-items: center; /* Centra las tarjetas */
       }
 
       .card {
-        width: 100%;
+        width: 100%; /* Cada tarjeta ocupa todo el ancho disponible */
       }
 
       .card-title {
-        font-size: 20px;
+        font-size: 20px; /* Reduce tamaño del título */
       }
 
       .card-description {
-        font-size: 14px;
+        font-size: 14px; /* Reduce tamaño de descripción */
       }
     }
   </style>
 </head>
-<body>
-  <div class="button-group">
+<body> <!-- Cuerpo del documento, donde se muestra el contenido -->
+  <div class="button-group"> <!-- Contenedor principal que agrupa todas las tarjetas -->
 
-    <div class="card" onclick="window.open('https://drive.google.com/file/d/1VoVMlVMlmtTjjtImUDUBcuJxklXK38iI/view?usp=sharing', '_blank')">
-      <div class="card-title">1) Transportadora de nidos PKB</div>
-      <p class="card-description">Equipo que organiza y transporta los frascos desde la estación inicial.</p>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1VoVMlVMlmtTjjtImUDUBcuJxklXK38iI/view?usp=sharing', '_blank')"> <!-- Tarjeta que abre un archivo de Google Drive en una nueva pestaña -->
+      <div class="card-title">1) Transportadora de nidos PKB</div> <!-- Título de la tarjeta -->
+      <p class="card-description">Equipo que organiza y transporta los frascos desde la estación inicial.</p> <!-- Descripción de la tarjeta -->
     </div>
 
-    <div class="card" onclick="window.open('https://drive.google.com/file/d/13JMYcfKEblmGmNoi4swOIB-SqBore3Oi/view?usp=sharing', '_blank')">
-      <div class="card-title">2) Banda abast frascos CH1</div>
-      <p class="card-description">Cinta transportadora encargada de abastecer frascos hacia la línea de llenado.</p>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/13JMYcfKEblmGmNoi4swOIB-SqBore3Oi/view?usp=sharing', '_blank')"> <!-- Tarjeta que abre otro archivo de Google Drive -->
+      <div class="card-title">2) Banda abast frascos CH1</div> <!-- Título -->
+      <p class="card-description">Cinta transportadora encargada de abastecer frascos hacia la línea de llenado.</p> <!-- Descripción -->
     </div>
 
-    <div class="card" onclick="window.location.href='envasadora_automatica_pkb.html'">
-      <div class="card-title">3) Envasadora automática PKB</div>
-      <p class="card-description">Máquina que dosifica el producto en frascos con alta precisión y velocidad.</p>
+    <div class="card" onclick="window.location.href='envasadora_automatica_pkb.html'"> <!-- Tarjeta que redirige a otra página local -->
+      <div class="card-title">3) Envasadora automática PKB</div> <!-- Título -->
+      <p class="card-description">Máquina que dosifica el producto en frascos con alta precisión y velocidad.</p> <!-- Descripción -->
     </div>
 
-    <div class="card" onclick="window.open('https://drive.google.com/file/d/1t8jacQ-GTVW2J-gChHII6vi-zFL5lwUX/view?usp=sharing', '_blank')">
-      <div class="card-title">4) Tapadora PKB</div>
-      <p class="card-description">Equipo encargado de colocar tapas de forma automática con torque controlado.</p>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1t8jacQ-GTVW2J-gChHII6vi-zFL5lwUX/view?usp=sharing', '_blank')"> <!-- Tarjeta con enlace externo -->
+      <div class="card-title">4) Tapadora PKB</div> <!-- Título -->
+      <p class="card-description">Equipo encargado de colocar tapas de forma automática con torque controlado.</p> <!-- Descripción -->
     </div>
     
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1k7ju0XiQLYjxN57W5ni5Q_Qt0SGpk5Ty/view?usp=sharing'">
-      <div class="card-title">5) Etiquetadora Label Star</div>
-      <p class="card-description">Máquina especializada en aplicar etiquetas envolventes con gran eficiencia.</p>
+    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1k7ju0XiQLYjxN57W5ni5Q_Qt0SGpk5Ty/view?usp=sharing'"> <!-- Tarjeta que redirige directamente a una URL -->
+      <div class="card-title">5) Etiquetadora Label Star</div> <!-- Título -->
+      <p class="card-description">Máquina especializada en aplicar etiquetas envolventes con gran eficiencia.</p> <!-- Descripción -->
     </div>
 
-    <div class="card" onclick="window.open('https://drive.google.com/file/d/1FWiD_i34AfT1ZBY5-XroQG-Kwto-Pwsv/view?usp=sharing', '_blank')">
-      <div class="card-title">6) Transportador Depucker #2</div>
-      <p class="card-description">Sistema de transporte para el movimiento fluido de frascos después del desempacado.</p>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1FWiD_i34AfT1ZBY5-XroQG-Kwto-Pwsv/view?usp=sharing', '_blank')"> <!-- Tarjeta con enlace externo -->
+      <div class="card-title">6) Transportador Depucker #2</div> <!-- Título -->
+      <p class="card-description">Sistema de transporte para el movimiento fluido de frascos después del desempacado.</p> <!-- Descripción -->
     </div>
 
-    <div class="card" onclick="window.open('https://drive.google.com/file/d/1ZJErLPbfN4SBAAKNlysjGyGeM-MSApqn/view?usp=sharing', '_blank')">
-      <div class="card-title">7) Etiquetadora universal</div>
-      <p class="card-description">Equipo para colocar etiquetas automáticamente sobre los envases. Alta precisión y velocidad.</p>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1ZJErLPbfN4SBAAKNlysjGyGeM-MSApqn/view?usp=sharing', '_blank')"> <!-- Tarjeta con otro enlace -->
+      <div class="card-title">7) Etiquetadora universal</div> <!-- Título -->
+      <p class="card-description">Equipo para colocar etiquetas automáticamente sobre los envases. Alta precisión y velocidad.</p> <!-- Descripción -->
     </div>
 
-
-    <div class="card" onclick="window.location.href='index.html'">
-      <div class="card-title">Regresar al Menú Principal</div>
-      <p class="card-description">Haz clic aquí para volver a la pantalla principal y explorar otras líneas.</p>
+    <div class="card" onclick="window.location.href='index.html'"> <!-- Tarjeta para volver al menú principal -->
+      <div class="card-title">Regresar al Menú Principal</div> <!-- Título -->
+      <p class="card-description">Haz clic aquí para volver a la pantalla principal y explorar otras líneas.</p> <!-- Descripción -->
     </div>
 
   </div>
